@@ -9,17 +9,17 @@ class AldeaForm(forms.ModelForm):
 
 		fields = [
 		'nombre',
-		#'departamento',
+		'municipio',
 			]
 
 		labels= {
 
 		'nombre': 'Nombre',
-		#'departamento': 'Departamento',
+		'municipio': 'Municipio',
 		
 		}
 
 		widgets= {
         'nombre': forms.TextInput(attrs={'class':'form-control'}),
-		#'departamento': forms.Select(attrs={'class':'form-control'}),
+		'municipio': forms.Select(attrs={'class':'form-control'}),
 		}
