@@ -1,0 +1,48 @@
+{% extends 'base/base1.html'%}
+
+{% block content %}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Nombre</th>
+			
+		</tr>
+
+	</thead>
+
+	<tbody>
+	{%if object_list %}
+	{% for aldea in object_list %}
+
+		<tr>
+		
+		<td>{{aldea.id}}</td>
+		<td>{{aldea.nombre}}</td>
+				
+		<td>
+			<a class="btn btn-primary" href="{%url 'aldea:aldea_editar' aldea.id%}">Editar</a>
+
+			<a class="btn btn-danger" href="{%url 'aldea:aldea_eliminar' aldea.id%}">Eliminar</a>
+
+			<a class="btn btn-default" href="{%url 'aldea:aldea_crear'%}">Nuevo</a>
+		</td>
+
+		</tr>
+		{% endfor %}
+
+		{% else %}
+
+		<center>
+		<h1>No hay registros de aldeas</h1>
+
+		<a class="btn btn-default" href="{%url 'aldea:aldea_crear'%}">Nuevo</a>
+		</center>
+
+		{% endif %}
+
+	</tbody>
+</table>
+
+{% endblock %}
